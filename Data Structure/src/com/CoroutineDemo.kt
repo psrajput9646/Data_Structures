@@ -12,12 +12,20 @@ fun main() = runBlocking {
 //        }
 //    }
   //  val sum = deferreds.awaitAll().sum()
+    println("Launch  ${Thread.currentThread().name}")
     launch {
         for (i in 1..3){
              delay(1000L )
             println("Loading2 $i")
         }
-
+        println("Launch one ${Thread.currentThread().name}")
+    }
+    launch {
+        for (i in 1..3){
+            delay(1000L )
+            println("Loading3 $i")
+        }
+        println("Launch two ${Thread.currentThread().name}")
     }
  //   println("$sum")
 
